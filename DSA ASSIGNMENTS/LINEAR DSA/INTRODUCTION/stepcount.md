@@ -1,28 +1,28 @@
-# **1.CONSTANT COMPLEXITY**
+# 1.CONSTANT COMPLEXITY
 
 Algorithm : Accessing array elements using an index.
 
-# **Step 1: Start**
+Step 1: Start
 
-**Step 2:** Declare an array with n elements
+Step 2: Declare an array with n elements
 
-**Step 3:** Display an array element using its index
+Step 3: Display an array element using its index
 
-**Step 4:** End
+Step 4: End
 
-# **Program Step Count** 
+Program Step Count
 
 For declaration and display the step count is O(1)  for each step.
 
 Complexity : Since it is a constant operation, the complexity is O(1)
 
-# **2.LINEAR COMPLEXITY**
+2.LINEAR COMPLEXITY
 
-## **Algorithm: Sum of Array Elements**
+Algorithm: Sum of Array Elements
 
-**Step 1:** Start
+Step 1: Start
 
-**Step 2:** Initialize a variable sum to 0.
+Step 2: Initialize a variable sum to 0.
 
 Step 3: For each element i from 0 to n-1 , add the value of arr[i] to sum.
 
