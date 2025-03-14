@@ -1,6 +1,7 @@
 ALGORITHM TO SWAP TWO NUMBERS
 
 Step1: START
+
 Step2: DECLARATION of integer variables num1,num2,temp
 Step3: Display message to prompt user to enter two numbers to be swapped
 step4: Take input to store num1 and num2
