@@ -47,10 +47,15 @@ Program Step Count
 Algorithm: A nested loop
 
 **Step 1:** Start
+
 **Step 2:** For each i from 0 to n-1 do:
+
 **Step 3:** For each j from 0 to n-1 do:
+
 **Step 4:** Display the value of j. 
+
 **Step 5:** End
+
 Program Step Count
 
 **Step 2:** for initialization of “i”,the step count is O(1) since it is a constant operation then condition’s step count is O(n) since it runs n times.
@@ -66,16 +71,27 @@ Complexity : Since the the inner loop runs n times for each iteration of the out
 Algorithm : Binary Search
 
 **Step 1:** Start
+
 **Step 2:** Declare variables, arr,left,right,mid and key.
+
 **Step 3:** While left <= right do:
+
 **Step 3:** Calculate mid as left + (right - left) / 2. 
+
 **Step 4:** If arr[mid] == key: 
+
 **Step 5:** Return mid (the index where the key is found). 
+
 **Step 6:** Else If arr[mid] < key: 
+
 **Step 7:** Set left = mid + 1. 
+
 **Step 8:** Else: 
+
 **Step 9:** Set right = mid - 1. 
+
 **Step 10:** Return -1 (if the key is not found).
+
 **Step 11:** End
 
 Program Step Count
@@ -86,31 +102,31 @@ Program Step Count
         ◦ In the worst case, the loop runs log₂(n) times where nn is the size of the array. 
 So, the overall time complexity for this step is O(log ⁡n)O(\log n).
 
-**Step 2.**1: Calculate mid as left + (right - left) / 2
+**Step 2.1: Calculate mid as left + (right - left) / 2
     • Time Complexity: O(1)O(1)
 This is a simple calculation that happens in constant time. 
 
-**Step 2.**2: If arr[mid] == key
+**Step 2.2: If arr[mid] == key
     • Time Complexity: O(1)O(1)
 This is a comparison between the middle element and the key. It is done in constant time. 
 
-**Step 2.**3: Else If arr[mid] < key
+**Step 2.3: Else If arr[mid] < key
     • Time Complexity: O(1)O(1)
 This is another comparison to decide whether to search in the left or right half. This step is done in constant time. 
 
-**Step 2.**3.1: Set left = mid + 1
+**Step 2.3.1: Set left = mid + 1
     • Time Complexity: O(1)O(1)
 This is a simple assignment operation that takes constant time.
 
-**Step 2.**4: Else
+**Step 2.4: Else
     • Time Complexity: O(1)O(1)
 This is the case where arr[mid] > key, and again, it takes constant time to evaluate. 
 
-**Step 2**.4.1: Set right = mid - 1
+**Step 2.4.1: Set right = mid - 1
     • Time Complexity: O(1)O(1)
 This is another assignment operation that takes constant time. 
 
-**Step 3:** Return -1 (if the key is not found)
+Step 3:Return -1 (if the key is not found)
     • Time Complexity: O(1)O(1)
 This is the final return statement, which occurs when the loop terminates, and it takes constant time. 
 
