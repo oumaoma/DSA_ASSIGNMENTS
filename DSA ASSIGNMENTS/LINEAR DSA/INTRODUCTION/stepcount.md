@@ -85,27 +85,35 @@ Program Step Count
         ◦ For each iteration of the loop, the search space is halved. This results in a logarithmic reduction of the search space. 
         ◦ In the worst case, the loop runs log₂(n) times where nn is the size of the array. 
 So, the overall time complexity for this step is O(log ⁡n)O(\log n).
+
 **Step 2.**1: Calculate mid as left + (right - left) / 2
     • Time Complexity: O(1)O(1)
 This is a simple calculation that happens in constant time. 
+
 **Step 2.**2: If arr[mid] == key
     • Time Complexity: O(1)O(1)
 This is a comparison between the middle element and the key. It is done in constant time. 
+
 **Step 2.**3: Else If arr[mid] < key
     • Time Complexity: O(1)O(1)
 This is another comparison to decide whether to search in the left or right half. This step is done in constant time. 
-S**tep 2.**3.1: Set left = mid + 1
+
+**Step 2.**3.1: Set left = mid + 1
     • Time Complexity: O(1)O(1)
-This is a simple assignment operation that takes constant time. 
+This is a simple assignment operation that takes constant time.
+
 **Step 2.**4: Else
     • Time Complexity: O(1)O(1)
 This is the case where arr[mid] > key, and again, it takes constant time to evaluate. 
+
 **Step 2**.4.1: Set right = mid - 1
     • Time Complexity: O(1)O(1)
 This is another assignment operation that takes constant time. 
+
 **Step 3:** Return -1 (if the key is not found)
     • Time Complexity: O(1)O(1)
 This is the final return statement, which occurs when the loop terminates, and it takes constant time. 
+
 **Step 4:** End
     • Time Complexity: O(1)O(1)
 The end of the algorithm also takes constant time. 
