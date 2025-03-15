@@ -28,7 +28,9 @@ Display menu options:
 *4. Exit the program
 
 Step10 :Read the user's choice.
--If choice == 1: - If stack is full (isFull(s) == TRUE), print "Stack is full! Cannot add more names." - Otherwise, ask for a name, remove newline character using strcspn. - Push the name onto the stack using the 'push()' function.
+-If choice == 1: - If stack is full (isFull(s) == TRUE), print "Stack is full! Cannot add more names." 
+- Otherwise, ask for a name, remove newline character using strcspn.
+- Push the name onto the stack using the 'push()' function.
 If choice == 2: - Display the stack using the 'display()' function.
 If choice == 3: - Print the name at `names[top]`of the stack using the 'peek()' function.
 If choice == 4: - Print "Exiting..." and exit the program.
