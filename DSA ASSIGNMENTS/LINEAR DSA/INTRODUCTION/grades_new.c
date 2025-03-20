@@ -16,9 +16,7 @@ int main(){
     scanf("%d",&physics[2]);
     printf("Endof term: ");
     scanf("%d",&physics[3]);
-    for(i=0;i<4;i++) {
-        physics_avg=(physics[i]+physics[i]+physics[i]+physics[i])/4;
-    }
+        physics_avg=(physics[0]+physics[1]+physics[2]+physics[3])/4;
     //students marks in Chemistry
     printf("Enter student's  marks for Chemistry:\n");
     printf("Assignment: ");
@@ -29,9 +27,8 @@ int main(){
     scanf("%d",&chemistry[2]);
     printf("Endof term: ");
     scanf("%d",&chemistry[3]);
-    for(i=0;i<4;i++) {
-        chemistry_avg=(chemistry[i]+chemistry[i]+chemistry[i]+chemistry[i])/4;
-    }
+    
+        chemistry_avg=(chemistry[0]+chemistry[1]+chemistry[2]+chemistry[3])/4;
     //students marks in Math
     printf("Enter student's  marks for Math:\n");
     printf("Assignment: ");
@@ -42,10 +39,7 @@ int main(){
     scanf("%d",&math[2]);
     printf("Endof term: ");
     scanf("%d",&math[3]);
-    for(i=0;i<4;i++)
-    {
-        math_avg=(math[i]+math[i]+math[i]+math[i])/4;
-    }
+        math_avg=(math[0]+math[1]+math[2]+math[3])/4;
     // calculating the total average marks for all the subjects
     total_avg = (physics_avg + chemistry_avg + math_avg)/3;
     //calculate the average marks in each subject
