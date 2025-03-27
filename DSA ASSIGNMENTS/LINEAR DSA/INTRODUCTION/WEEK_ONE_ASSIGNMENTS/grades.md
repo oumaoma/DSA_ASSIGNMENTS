@@ -43,8 +43,8 @@ After collecting the marks for each subject, the program calculates the average 
 The program displays the average marks for each subject and the overall average.
 
 # **Example**
+![grades](https://github.com/user-attachments/assets/bb7cbc22-915b-4c80-8450-d512b43831a5)
 
-![grades.png](../../../../Pictures/Screenshots/grades.png)
 
 
 
