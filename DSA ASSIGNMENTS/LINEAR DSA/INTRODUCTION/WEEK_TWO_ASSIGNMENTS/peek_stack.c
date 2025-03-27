@@ -10,11 +10,24 @@ typedef struct {
 
 // Function to initialize stack with user-defined max size
 void initialize(Stack *s, int maxSize) {
+    if (maxSize <= 0) {
+        printf("Invalid stack size! Must be greater than zero.\n");
+        exit(1);
+    }
+    
     s->max = maxSize;
     s->top = -1;
     s->names = (char **)malloc(maxSize * sizeof(char *));
+    if (!s->names) {
+        printf("Memory allocation failed!\n");
+        exit(1);
+    }
     for (int i = 0; i < maxSize; i++) {
-        s->names[i] = (char *)malloc(50 * sizeof(char)); // Allocate space for names
+        s->names[i] = (char *)malloc(50 * sizeof(char));
+        if (!s->names[i]) {
+            printf("Memory allocation failed!\n");
+            exit(1);
+        }
     }
 }
 
@@ -35,8 +48,9 @@ void push(Stack *s, char name[]) {
         return;
     }
     s->top++;
-    strcpy(s->names[s->top], name);
-    printf("Added: %s\n", name);
+    strncpy(s->names[s->top], name, 49);
+    s->names[s->top][49] = '\0'; // Ensure null termination
+    printf("Added: %s\n", s->names[s->top]);
 }
 
 // Function to display stack elements
@@ -107,10 +121,9 @@ int main() {
             case 4:
                 printf("Exiting...\n");
                 freeStack(&myStack);
-                exit(0);
+                return 0;
             default:
                 printf("Invalid choice! Try again.\n");
         }
     }
-    return 0;
 }
