@@ -39,3 +39,10 @@ After entering all animals, the program merges both domestic and wild animals in
 The total number of animals is displayed, followed by a list of all animal names.
 
 **## Example**
+
+![animal_merge](https://github.com/user-attachments/assets/e101d9e6-07e4-48ef-a295-c3de2c4fb03a)
+
+
+
+
+
