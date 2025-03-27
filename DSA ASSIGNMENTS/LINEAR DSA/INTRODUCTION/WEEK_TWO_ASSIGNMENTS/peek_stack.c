@@ -2,21 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX 5  // Maximum stack size
-
 typedef struct {
-    char names[MAX][50];  // Array to hold names
+    char **names;  // Dynamic array to hold names
     int top;
+    int max;       // Maximum stack size
 } Stack;
 
-// Function to initialize stack
-void initialize(Stack *s) {
+// Function to initialize stack with user-defined max size
+void initialize(Stack *s, int maxSize) {
+    s->max = maxSize;
     s->top = -1;
+    s->names = (char **)malloc(maxSize * sizeof(char *));
+    for (int i = 0; i < maxSize; i++) {
+        s->names[i] = (char *)malloc(50 * sizeof(char)); // Allocate space for names
+    }
 }
 
 // Function to check if the stack is full
 int isFull(Stack *s) {
-    return s->top == MAX - 1;
+    return s->top == s->max - 1;
 }
 
 // Function to check if the stack is empty
@@ -56,13 +60,27 @@ void peek(Stack *s) {
     printf("Top element: %s\n", s->names[s->top]);
 }
 
+// Function to free allocated memory
+void freeStack(Stack *s) {
+    for (int i = 0; i < s->max; i++) {
+        free(s->names[i]);
+    }
+    free(s->names);
+}
+
 int main() {
     Stack myStack;
-    initialize(&myStack);
-
+    int maxSize;
+    
+    printf("Enter the maximum stack size: ");
+    scanf("%d", &maxSize);
+    getchar();  // Consume newline left in buffer
+    
+    initialize(&myStack, maxSize);
+    
     char name[50];
     int choice;
-
+    
     while (1) {
         printf("\n1. Push a friend's name\n2. Display stack\n3. Peek at top\n4. Exit\n");
         printf("Enter your choice: ");
@@ -88,6 +106,7 @@ int main() {
                 break;
             case 4:
                 printf("Exiting...\n");
+                freeStack(&myStack);
                 exit(0);
             default:
                 printf("Invalid choice! Try again.\n");
