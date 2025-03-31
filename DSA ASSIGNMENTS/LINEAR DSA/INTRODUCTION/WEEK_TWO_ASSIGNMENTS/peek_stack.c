@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
 
-#define NAME_LENGTH 25
+#define ITEM_LENGTH 50
 
 int main() {
     int maxSize;
@@ -16,36 +15,24 @@ int main() {
         return 1;
     }
 
-    char stack[maxSize][NAME_LENGTH]; // Dynamic stack size based on user input
+    char stack[maxSize][ITEM_LENGTH]; // Dynamic stack size based on user input
     int top = -1; // Stack is initially empty
-    char name[NAME_LENGTH];
+    char item[ITEM_LENGTH];
     int choice;
 
     while (1) {
-        printf("\n1. Push a friend's name\n2. Display stack\n3. Peek at top\n4. Exit\n");
+        printf("\n1. Push an item\n2. Display stack\n3. Peek at top\n4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         getchar();  // Consume newline left in buffer
 
         if (choice == 1) {
             if (top == maxSize - 1) {
-                printf("Stack is full! Cannot add more names.\n");
+                printf("Stack is full! Cannot add more items.\n");
             } else {
-                printf("Enter a friend's name: ");
-                scanf("%s", name);
-                int valid = 1;
-                for (int i = 0; name[i] != '\0'; i++) {
-                    if (!isalpha(name[i])) {
-                        valid = 0;
-                        break;
-                    }
-                }
-                if (valid) {
-                    strcpy(stack[++top], name);
-                    printf("Added: %s\n", stack[top]);
-                } else {
-                    printf("Invalid name! Only alphabets are allowed.\n");
-                }
+                printf("Enter an item: ");
+                scanf("%49s", stack[++top]);
+                printf("Added: %s\n", stack[top]);
             }
         } else if (choice == 2) {
             if (top == -1) {
