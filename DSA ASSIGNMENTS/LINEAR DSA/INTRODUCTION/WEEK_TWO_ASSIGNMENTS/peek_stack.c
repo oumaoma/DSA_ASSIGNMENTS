@@ -1,23 +1,23 @@
 #include <stdio.h>
 
-#define MAX_SIZE 100 // Define a fixed maximum size for the stack
-#define NAME_LENGTH 50
+#define NAME_LENGTH 25
 
 int main() {
     int maxSize;
-    char stack[MAX_SIZE][NAME_LENGTH]; // Fixed-size 2D array to store names
-    int top = -1; // Stack is initially empty
-    char name[NAME_LENGTH];
-    int choice;
-
-    printf("Enter the maximum stack size (<= %d): ", MAX_SIZE);
+    
+    printf("Enter the maximum stack size: ");
     scanf("%d", &maxSize);
     getchar();  // Consume newline left in buffer
 
-    if (maxSize <= 0 || maxSize > MAX_SIZE) {
-        printf("Invalid stack size! Must be between 1 and %d.\n", MAX_SIZE);
+    if (maxSize <= 0) {
+        printf("Invalid stack size! Must be greater than zero.\n");
         return 1;
     }
+
+    char stack[maxSize][NAME_LENGTH]; // Dynamic stack size based on user input
+    int top = -1; // Stack is initially empty
+    char name[NAME_LENGTH];
+    int choice;
 
     while (1) {
         printf("\n1. Push a friend's name\n2. Display stack\n3. Peek at top\n4. Exit\n");
