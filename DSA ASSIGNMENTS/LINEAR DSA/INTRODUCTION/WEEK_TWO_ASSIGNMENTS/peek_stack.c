@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
-#define NAME_LENGTH 25
+#define NAME_LENGTH 50
 
 int main() {
     int maxSize;
@@ -30,8 +32,20 @@ int main() {
                 printf("Stack is full! Cannot add more names.\n");
             } else {
                 printf("Enter a friend's name: ");
-                scanf("%s", stack[++top]);
-                printf("Added: %s\n", stack[top]);
+                scanf("%s", name);
+                int valid = 1;
+                for (int i = 0; name[i] != '\0'; i++) {
+                    if (!isalpha(name[i])) {
+                        valid = 0;
+                        break;
+                    }
+                }
+                if (valid) {
+                    strcpy(stack[++top], name);
+                    printf("Added: %s\n", stack[top]);
+                } else {
+                    printf("Invalid name! Only alphabets are allowed.\n");
+                }
             }
         } else if (choice == 2) {
             if (top == -1) {
