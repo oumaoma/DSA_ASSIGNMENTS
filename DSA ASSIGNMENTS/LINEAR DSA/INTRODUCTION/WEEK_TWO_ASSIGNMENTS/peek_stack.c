@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#define NAME_LENGTH 50
+#define NAME_LENGTH 25
 
 int main() {
     int maxSize;
