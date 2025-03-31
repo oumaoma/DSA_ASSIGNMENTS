@@ -1,36 +1,24 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
+#define MAX_SIZE 100 // Define a fixed maximum size for the stack
+#define NAME_LENGTH 50
 
 int main() {
     int maxSize;
-    
-    printf("Enter the maximum stack size: ");
+    char stack[MAX_SIZE][NAME_LENGTH]; // Fixed-size 2D array to store names
+    int top = -1; // Stack is initially empty
+    char name[NAME_LENGTH];
+    int choice;
+
+    printf("Enter the maximum stack size (<= %d): ", MAX_SIZE);
     scanf("%d", &maxSize);
     getchar();  // Consume newline left in buffer
-    
-    if (maxSize <= 0) {
-        printf("Invalid stack size! Must be greater than zero.\n");
+
+    if (maxSize <= 0 || maxSize > MAX_SIZE) {
+        printf("Invalid stack size! Must be between 1 and %d.\n", MAX_SIZE);
         return 1;
     }
-    
-    char **stack = (char **)malloc(maxSize * sizeof(char *));
-    if (!stack) {
-        printf("Memory allocation failed!\n");
-        return 1;
-    }
-    for (int i = 0; i < maxSize; i++) {
-        stack[i] = (char *)malloc(50 * sizeof(char));
-        if (!stack[i]) {
-            printf("Memory allocation failed!\n");
-            return 1;
-        }
-    }
-    
-    int top = -1;
-    char name[50];
-    int choice;
-    
+
     while (1) {
         printf("\n1. Push a friend's name\n2. Display stack\n3. Peek at top\n4. Exit\n");
         printf("Enter your choice: ");
@@ -42,11 +30,7 @@ int main() {
                 printf("Stack is full! Cannot add more names.\n");
             } else {
                 printf("Enter a friend's name: ");
-                fgets(name, sizeof(name), stdin);
-                name[strcspn(name, "\n")] = '\0'; // Remove newline character
-                top++;
-                strncpy(stack[top], name, 49);
-                stack[top][49] = '\0'; // Ensure null termination
+                scanf("%s", stack[++top]);
                 printf("Added: %s\n", stack[top]);
             }
         } else if (choice == 2) {
@@ -66,10 +50,6 @@ int main() {
             }
         } else if (choice == 4) {
             printf("Exiting...\n");
-            for (int i = 0; i < maxSize; i++) {
-                free(stack[i]);
-            }
-            free(stack);
             return 0;
         } else {
             printf("Invalid choice! Try again.\n");
