@@ -26,6 +26,6 @@ This C program implements a stack to store names, allowing users to perform basi
     - The program presents a menu and repeatedly asks for the user's choice until the user decides to exit.
 
 ## Sample Output
+
 ![Uploading stack_.png…]()
 
-### Example 1: Pushing names
