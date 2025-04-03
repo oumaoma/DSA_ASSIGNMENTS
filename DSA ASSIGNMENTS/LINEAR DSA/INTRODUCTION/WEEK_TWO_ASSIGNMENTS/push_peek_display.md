@@ -28,6 +28,3 @@ This C program implements a stack to store names, allowing users to perform basi
 ## Sample Output
 
 ### Example 1: Pushing names
-![animal_sort_output](https://github.com/user-attachments/assets/26dda730-eba8-4ff9-a361-357b505e5fd1)
-
-
