@@ -11,11 +11,12 @@ int main() {
     while (1) {
         printf("Enter the maximum stack size: ");
         scanf("%d", &maxSize);
+        getchar();
 
         if (maxSize > 0) {
             break;  // Exit the loop if the stack size is valid
         } else {
-            printf("Invalid stack size! Please enter a number greater than 0.\n");
+            printf("Invalid stack size! \n");
         }
     }
 
@@ -50,7 +51,7 @@ int main() {
                 printf("Stack is full! Cannot add more names.\n");
             } else {
                 // Prompt for a multi-word name (can include spaces)
-                printf("Enter a name (only alphabetic characters and spaces allowed): ");
+                printf("Enter a friend's name : ");
                 getchar(); // Consume any remaining newline character from previous input
                 fgets(stack[++top], NAME_LENGTH, stdin);
 
@@ -69,7 +70,7 @@ int main() {
                 if (isValid) {
                     printf("Added: %s\n", stack[top]);
                 } else {
-                    printf("Invalid name! Please enter only alphabetic characters and spaces.\n");
+                    printf("Invalid name!\n");
                     top--;  // Roll back the stack to not add an invalid name
                 }
             }
